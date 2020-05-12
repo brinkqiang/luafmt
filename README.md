@@ -25,7 +25,7 @@ Copyright (c) 2013-2018 brinkqiang (brink.qiang@gmail.com)
 install cmake
 
 ## Intro
-luafmt
+luafmt based on fmt
 ```lua
 -- lua script
 
