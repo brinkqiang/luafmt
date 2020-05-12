@@ -9,4 +9,5 @@ luafmt.warn("{}{}", "hello", 2020)
 luafmt.error("{}{}", "hello", 2020)
 luafmt.critical("{}{}", "hello", 2020)
 
-print(luafmt.format("{}{}", "hello", 2020))
+print(luafmt.format("{0}{1}", "hello", 2020))
+print(luafmt.format("{1}{0}", "hello", 2020))
