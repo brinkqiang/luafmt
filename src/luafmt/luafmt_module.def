@@ -1,0 +1,3 @@
+EXPORTS 
+    luaopen_luafmt
+    require_luafmt
