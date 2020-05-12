@@ -38,9 +38,18 @@ luafmt.warn("{}{}", "hello", 2020)
 luafmt.error("{}{}", "hello", 2020)
 luafmt.critical("{}{}", "hello", 2020)
 
-print(luafmt.format("{}{}", "hello", 2020))
-
+print(luafmt.format("{0}{1}", "hello", 2020))
+print(luafmt.format("{1}{0}", "hello", 2020))
 ```
+
+out
+```
+[2020-05-12 23:22:18 040829] [22056][error] hello2020
+[2020-05-12 23:22:18 041437] [22056][critical] hello2020
+hello2020
+2020hello
+```
+
 ## Contacts
 [![Join the chat](https://badges.gitter.im/brinkqiang/luafmt/Lobby.svg)](https://gitter.im/brinkqiang/luafmt)
 
