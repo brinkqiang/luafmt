@@ -18,5 +18,6 @@ MESSAGE(STATUS "VERSION: ${LUAFMT_VERSION}")
 ADD_DEFINITIONS(-DUSE_LUAFMT)
 ADD_DEFINITIONS(-DLUA_COMPAT_MODULE -DLUA_COMPAT_APIINTCASTS)
 
-LuaModuleImport("${LUA_MODULE}" "luafmt" "src/luafmt")
+ModuleImport("dmlog" "thirdparty/dmlog")
+LuaModuleImport("${LUA_MODULE}" "luafmt" "src/luafmt" "dmlog")
 

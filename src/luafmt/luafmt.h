@@ -19,29 +19,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "luafmt_module.h"
-#include "luafmt.h"
+#ifndef __LUAFMT_H__
+#define __LUAFMT_H__
 
-namespace lua_module_luafmt
-{
-    static sol::table require_api(sol::this_state L)
-    {
-        sol::state_view lua(L);
-        sol::table module = lua.create_table();
-        module.set_function("critical", &Cluafmt::critical);
-        module.set_function("format", &Cluafmt::format);
-        return module;
-    }    
-}
+#include "sol.hpp"
+#include "dmlog.h"
 
-LUA_API int luaopen_luafmt(lua_State* L)
+class Cluafmt
 {
-    return sol::stack::call_lua(L, 1, lua_module_luafmt::require_api);
-}
+public:
+    Cluafmt(sol::this_state L);
 
-LUA_API int require_luafmt(lua_State* L)
-{
-    luaL_requiref(L, "luafmt", luaopen_luafmt, 0);
-    printf("lua module: require luafmt\n");
-    return 1;
-}
+    static void log(sol::this_state L, spdlog::level::level_enum lvl, const char* fmt, sol::variadic_args v);
+
+    static void trace(sol::this_state, const char* fmt, sol::variadic_args v);
+    static void debug(sol::this_state, const char* fmt, sol::variadic_args v);
+    static void info(sol::this_state, const char* fmt, sol::variadic_args v);
+    static void warn(sol::this_state, const char* fmt, sol::variadic_args v);
+    static void err(sol::this_state, const char* fmt, sol::variadic_args v);
+    static void critical(sol::this_state, const char* fmt, sol::variadic_args v);
+    static void off(sol::this_state, const char* fmt, sol::variadic_args v);
+
+    static std::string format(sol::this_state, const char* fmt, sol::variadic_args v);
+
+private:
+    sol::state_view m_oState;
+};
+
+#endif // __LUAFMT_H__
