@@ -36,7 +36,7 @@ public:
     static void debug(sol::this_state, const char* fmt, sol::variadic_args v);
     static void info(sol::this_state, const char* fmt, sol::variadic_args v);
     static void warn(sol::this_state, const char* fmt, sol::variadic_args v);
-    static void err(sol::this_state, const char* fmt, sol::variadic_args v);
+    static void error(sol::this_state, const char* fmt, sol::variadic_args v);
     static void critical(sol::this_state, const char* fmt, sol::variadic_args v);
     static void off(sol::this_state, const char* fmt, sol::variadic_args v);
 

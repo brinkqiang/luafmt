@@ -46,7 +46,7 @@ void Cluafmt::log(sol::this_state L, spdlog::level::level_enum lvl, const char* 
         warn(L, fmt, v);
         break;
     case spdlog::level::err:
-        err(L, fmt, v);
+        error(L, fmt, v);
         break;
     case spdlog::level::critical:
         critical(L, fmt, v);
@@ -62,25 +62,27 @@ void Cluafmt::log(sol::this_state L, spdlog::level::level_enum lvl, const char* 
 
 void Cluafmt::trace(sol::this_state L, const char* fmt, sol::variadic_args v)
 {
-
+   CDMLog::Instance()->GetLogger()->trace(format(L, fmt, v));
 }
 
 void Cluafmt::debug(sol::this_state L, const char* fmt, sol::variadic_args v)
 {
-
+   CDMLog::Instance()->GetLogger()->debug(format(L, fmt, v));
 }
 
 void Cluafmt::info(sol::this_state L, const char* fmt, sol::variadic_args v)
 {
-
+   CDMLog::Instance()->GetLogger()->info(format(L, fmt, v));
 }
 
 void Cluafmt::warn(sol::this_state L, const char * fmt, sol::variadic_args v)
 {
+   CDMLog::Instance()->GetLogger()->warn(format(L, fmt, v));
 }
 
-void Cluafmt::err(sol::this_state L, const char * fmt, sol::variadic_args v)
+void Cluafmt::error(sol::this_state L, const char * fmt, sol::variadic_args v)
 {
+   CDMLog::Instance()->GetLogger()->error(format(L, fmt, v));
 }
 
 void Cluafmt::critical(sol::this_state L, const char* fmt, sol::variadic_args v)

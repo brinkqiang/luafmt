@@ -28,8 +28,22 @@ namespace lua_module_luafmt
     {
         sol::state_view lua(L);
         sol::table module = lua.create_table();
+        module.set_function("trace", &Cluafmt::trace);
+
+        module.set_function("debug", &Cluafmt::debug);
+
+        module.set_function("info", &Cluafmt::info);
+
+        module.set_function("warn", &Cluafmt::warn);
+
+        module.set_function("error", &Cluafmt::error);
+
         module.set_function("critical", &Cluafmt::critical);
+
+        module.set_function("off", &Cluafmt::off);
+
         module.set_function("format", &Cluafmt::format);
+
         return module;
     }    
 }
