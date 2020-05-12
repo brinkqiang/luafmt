@@ -95,7 +95,6 @@ void Cluafmt::off(sol::this_state L, const char* fmt, sol::variadic_args v)
 
 std::string Cluafmt::format(sol::this_state L, const char* fmt, sol::variadic_args v)
 {
-
     switch (v.size())
     {
     case 0:
