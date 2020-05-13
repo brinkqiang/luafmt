@@ -57,7 +57,6 @@ void Cluafmt::log(sol::this_state L, spdlog::level::level_enum lvl, const char* 
     default:
         break;
     }
-
 }
 
 void Cluafmt::trace(sol::this_state L, const char* fmt, sol::variadic_args v)
@@ -97,6 +96,8 @@ void Cluafmt::off(sol::this_state L, const char* fmt, sol::variadic_args v)
 
 std::string Cluafmt::format(sol::this_state L, const char* fmt, sol::variadic_args v)
 {
+    fmt::dynamic_format_arg_store<fmt::format_context> store;
+
     switch (v.size())
     {
     case 0:
