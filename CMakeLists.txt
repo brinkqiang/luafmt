@@ -19,5 +19,5 @@ ADD_DEFINITIONS(-DUSE_LUAFMT)
 ADD_DEFINITIONS(-DLUA_COMPAT_MODULE -DLUA_COMPAT_APIINTCASTS)
 
 ModuleImport("dmlog" "thirdparty/dmlog")
-LuaModuleImport("${LUA_MODULE}" "luafmt" "src/luafmt" "dmlog")
+LuaModuleImport("${LUA_MODULE}" "luafmt" "src/luafmt" "")
 
