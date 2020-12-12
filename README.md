@@ -26,6 +26,9 @@ install cmake
 
 ## Intro
 luafmt based on fmt
+
+lua ../script/main.lua
+
 ```lua
 -- lua script
 
