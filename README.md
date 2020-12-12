@@ -44,10 +44,7 @@ print(luafmt.format("{1}{0}", "hello", 2020))
 
 out
 ```
-[2020-05-12 23:22:18 040829] [22056][error] hello2020
-[2020-05-12 23:22:18 041437] [22056][critical] hello2020
-hello2020
-2020hello
+const std::string& fmt
 ```
 
 ## Contacts

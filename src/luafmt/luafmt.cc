@@ -29,7 +29,7 @@ Cluafmt::Cluafmt(sol::this_state L)
     DMLOG_INIT();
 }
 
-void Cluafmt::log(sol::this_state L, spdlog::level::level_enum lvl, const char* fmt, sol::variadic_args v)
+void Cluafmt::log(sol::this_state L, spdlog::level::level_enum lvl, const std::string& fmt, sol::variadic_args v)
 {
     switch (lvl)
     {
@@ -59,42 +59,42 @@ void Cluafmt::log(sol::this_state L, spdlog::level::level_enum lvl, const char* 
     }
 }
 
-void Cluafmt::trace(sol::this_state L, const char* fmt, sol::variadic_args v)
+void Cluafmt::trace(sol::this_state L, const std::string& fmt, sol::variadic_args v)
 {
    CDMLog::Instance()->GetLogger()->trace(format(L, fmt, v));
 }
 
-void Cluafmt::debug(sol::this_state L, const char* fmt, sol::variadic_args v)
+void Cluafmt::debug(sol::this_state L, const std::string& fmt, sol::variadic_args v)
 {
    CDMLog::Instance()->GetLogger()->debug(format(L, fmt, v));
 }
 
-void Cluafmt::info(sol::this_state L, const char* fmt, sol::variadic_args v)
+void Cluafmt::info(sol::this_state L, const std::string& fmt, sol::variadic_args v)
 {
    CDMLog::Instance()->GetLogger()->info(format(L, fmt, v));
 }
 
-void Cluafmt::warn(sol::this_state L, const char * fmt, sol::variadic_args v)
+void Cluafmt::warn(sol::this_state L, const std::string& fmt, sol::variadic_args v)
 {
    CDMLog::Instance()->GetLogger()->warn(format(L, fmt, v));
 }
 
-void Cluafmt::error(sol::this_state L, const char * fmt, sol::variadic_args v)
+void Cluafmt::error(sol::this_state L, const std::string& fmt, sol::variadic_args v)
 {
    CDMLog::Instance()->GetLogger()->error(format(L, fmt, v));
 }
 
-void Cluafmt::critical(sol::this_state L, const char* fmt, sol::variadic_args v)
+void Cluafmt::critical(sol::this_state L, const std::string& fmt, sol::variadic_args v)
 {
    CDMLog::Instance()->GetLogger()->critical(format(L, fmt, v));
 }
 
-void Cluafmt::off(sol::this_state L, const char* fmt, sol::variadic_args v)
+void Cluafmt::off(sol::this_state L, const std::string& fmt, sol::variadic_args v)
 {
 
 }
 
-std::string Cluafmt::format(sol::this_state L, const char* fmt, sol::variadic_args v)
+std::string Cluafmt::format(sol::this_state L, const std::string& fmt, sol::variadic_args v)
 {
     //fmt::dynamic_format_arg_store<fmt::format_context> store;
 

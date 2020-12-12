@@ -30,17 +30,17 @@ class Cluafmt
 public:
     Cluafmt(sol::this_state L);
 
-    static void log(sol::this_state L, spdlog::level::level_enum lvl, const char* fmt, sol::variadic_args v);
+    static void log(sol::this_state L, spdlog::level::level_enum lvl, const std::string& fmt, sol::variadic_args v);
 
-    static void trace(sol::this_state, const char* fmt, sol::variadic_args v);
-    static void debug(sol::this_state, const char* fmt, sol::variadic_args v);
-    static void info(sol::this_state, const char* fmt, sol::variadic_args v);
-    static void warn(sol::this_state, const char* fmt, sol::variadic_args v);
-    static void error(sol::this_state, const char* fmt, sol::variadic_args v);
-    static void critical(sol::this_state, const char* fmt, sol::variadic_args v);
-    static void off(sol::this_state, const char* fmt, sol::variadic_args v);
+    static void trace(sol::this_state, const std::string& fmt, sol::variadic_args v);
+    static void debug(sol::this_state, const std::string& fmt, sol::variadic_args v);
+    static void info(sol::this_state, const std::string& fmt, sol::variadic_args v);
+    static void warn(sol::this_state, const std::string& fmt, sol::variadic_args v);
+    static void error(sol::this_state, const std::string& fmt, sol::variadic_args v);
+    static void critical(sol::this_state, const std::string& fmt, sol::variadic_args v);
+    static void off(sol::this_state, const std::string& fmt, sol::variadic_args v);
 
-    static std::string format(sol::this_state, const char* fmt, sol::variadic_args v);
+    static std::string format(sol::this_state, const std::string& fmt, sol::variadic_args v);
 
 private:
     sol::state_view m_oState;
