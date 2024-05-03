@@ -58,6 +58,5 @@ hello2020
 ```
 
 ## Contacts
-[![Join the chat](https://badges.gitter.im/brinkqiang/luafmt/Lobby.svg)](https://gitter.im/brinkqiang/luafmt)
 
 ## Thanks
